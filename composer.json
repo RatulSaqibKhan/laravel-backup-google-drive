@@ -1,0 +1,30 @@
+{
+  "name": "ratulsaqibkhan/laravel-backup-google-drive",
+  "description": "Backup Laravel Application using laravel backup in google drive",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Ratulsaqibkhan\\LaravelBackupGoogleDrive\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Ratulsaqibkhan\\LaravelBackupGoogleDrive\\LaravelBackupGoogleDriveServiceProvider"
+      ]
+    }
+  },
+  "authors": [
+    {
+      "name": "RatulSaqibKhan",
+      "email": "ratulkhan.jhenidah@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": "^7.3|^8.0",
+    "spatie/laravel-backup": "v6.16",
+    "nao-pon/flysystem-google-drive": "~1.1"
+  }
+}
