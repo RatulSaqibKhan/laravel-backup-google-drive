@@ -3,7 +3,7 @@
 namespace Ratulsaqibkhan\LaravelBackupGoogleDrive;
 
 use Illuminate\Support\ServiceProvider;
-use Ratulsaqibkhan\Console\Commands\AppDbBackupCommand;
+use Ratulsaqibkhan\Commands\AppDbBackupCommand;
 
 class LaravelBackupGoogleDriveServiceProvider extends ServiceProvider
 {
