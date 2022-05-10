@@ -6,35 +6,19 @@ php artisan vendor:publish --provider="Spatie\Backup\BackupServiceProvider"
 - Next step is to add google in the disk option in the config/backup.php.
 ``` bash
 'disks' => [
-    'google',                
-    'local',             
+    'google',
+    'local',
 ],
 ```
-- Next create new Service Provider using following command
+
+- Afterward, register GoogleDriveServiceProvider provider inside the config/app.php file.
 
 ``` bash
-php artisan make:provider GoogleDriveServiceProvider
+'providers' => [
+    Ratulsaqibkhan\LaravelBackupGoogleDrive\Providers\GoogleDriveServiceProvider::class,
+]
+
 ```
-- Then, inside the boot() method add the Google driver for the Laravel filesystem:
-``` bash
-// app/Providers/GoogleDriveServiceProvider.php
-
-public function boot()
-{
-    \Storage::extend('google', function ($app, $config) {
-        $client = new \Google_Client();
-        $client->setClientId($config['clientId']);
-        $client->setClientSecret($config['clientSecret']);
-        $client->refreshToken($config['refreshToken']);
-        $service = new \Google_Service_Drive($client);
-        $adapter = new \Hypweb\Flysystem\GoogleDrive\GoogleDriveAdapter($service, $config['folderId']);
-
-        return new \League\Flysystem\Filesystem($adapter);
-    });
-}
-```
-
-- Afterward, register your GoogleDriveServiceProvider provider inside the config/app.php file.
 
 - At this point, we will add the storage disk configuration to config/filesystem.php:
 ``` bash
