@@ -38,9 +38,6 @@ class AppDbBackupCommand extends Command
             File::delete(File::glob(base_path('backup/*.zip')));
             File::delete(File::glob(storage_path('app/public/*.zip')));
             Artisan::call('backup:run');
-            if (config('backup.enable_copy_to_local_dir')) {
-                File::copyDirectory('backup', config('backup.local_backup_dir'));
-            }
         }
 
     }

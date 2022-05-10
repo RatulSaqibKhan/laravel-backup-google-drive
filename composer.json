@@ -1,6 +1,16 @@
 {
   "name": "ratulsaqibkhan/laravel-backup-google-drive",
   "description": "Backup Laravel Application using laravel backup in google drive",
+  "keywords": [
+    "ratulsaqibkhan",
+    "spatie",
+    "backup",
+    "database",
+    "laravel-backup",
+    "laravel-backup-google-drive",
+    "google-drive-laravel-backup"
+  ],
+  "homepage": "https://github.com/RatulSaqibKhan/laravel-backup-google-drive",
   "license": "MIT",
   "autoload": {
     "psr-4": {
@@ -22,6 +32,7 @@
     }
   ],
   "minimum-stability": "dev",
+  "prefer-stable": true,
   "require": {
     "php": "^7.3|^8.0",
     "spatie/laravel-backup": "v6.16",
