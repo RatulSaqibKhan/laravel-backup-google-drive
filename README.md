@@ -55,9 +55,6 @@ return [
 
 - Next, we need to update .env file. In this environment file we need to add the following Google credentials with BACKUP_ENABLE and BACKUP_TIME:
 ``` bash
-BACKUP_ENABLE=true
-BACKUP_TIME=13:15
-
 GOOGLE_DRIVE_CLIENT_ID=xxx.apps.googleusercontent.com
 GOOGLE_DRIVE_CLIENT_SECRET=xxx
 GOOGLE_DRIVE_REFRESH_TOKEN=xxx
