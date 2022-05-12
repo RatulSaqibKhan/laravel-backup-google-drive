@@ -2,6 +2,11 @@
 
 This is a laravel package to backup your application in google drive along with local directory. This package is inspired by [Spatie Laravel Backup](https://github.com/spatie/laravel-backup) and [Flysystem Adapter for Google Drive](https://github.com/nao-pon/flysystem-google-drive)
 
+Install this package using the following command
+``` bash
+composer require ratulsaqibkhan/laravel-backup-google-drive
+```
+
 ``` bash
 php artisan vendor:publish --provider="Spatie\Backup\BackupServiceProvider"
 ```
