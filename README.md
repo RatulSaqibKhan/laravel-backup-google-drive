@@ -10,12 +10,21 @@ composer require ratulsaqibkhan/laravel-backup-google-drive
 ``` bash
 php artisan vendor:publish --provider="Spatie\Backup\BackupServiceProvider"
 ```
-- Next step is to add google in the disk option in the config/backup.php.
+- Next step is to add google and backup in the disk option in the config/backup.php.
 ``` bash
 'disks' => [
     'google',
-    'local',
+    'backup',
 ],
+```
+
+- Now set up empty string to the name option in the config/backup.php.
+``` bash
+/*
+* The name of this application. You can use this name to monitor
+* the backups.
+*/
+'name' => '',
 ```
 
 - Afterward, register GoogleDriveServiceProvider provider inside the config/app.php file.
@@ -45,6 +54,10 @@ return [
             'folderId' => env('GOOGLE_DRIVE_FOLDER_ID'),
         ],
         
+        'backup' => [
+            'driver' => 'local',
+            'root' => base_path('backup'),
+        ],
         // ...
         
     ],
@@ -52,11 +65,20 @@ return [
     // ...
 ];
 ```
+- Now create a folder named "backup" in the application root at which the local backup files could be kept
 
-- Next, we need to update .env file. In this environment file we need to add the following Google credentials with BACKUP_ENABLE and BACKUP_TIME:
+- Next, we need to update .env file. In this environment file we need to add the following Google credentials with BACKUP_ENABLE:
 ``` bash
+BACKUP_ENABLE = true
+
 GOOGLE_DRIVE_CLIENT_ID=xxx.apps.googleusercontent.com
 GOOGLE_DRIVE_CLIENT_SECRET=xxx
 GOOGLE_DRIVE_REFRESH_TOKEN=xxx
 GOOGLE_DRIVE_FOLDER_ID=null
 ```
+
+- With the following command the application can be backup:
+``` bash
+php artisan laravel-app:backup
+```
+- For more info go to [Spatie Laravel Backup](https://github.com/spatie/laravel-backup) and [Flysystem Adapter for Google Drive](https://github.com/nao-pon/flysystem-google-drive)
