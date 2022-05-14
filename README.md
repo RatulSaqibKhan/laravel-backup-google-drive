@@ -76,6 +76,13 @@ GOOGLE_DRIVE_CLIENT_SECRET=xxx
 GOOGLE_DRIVE_REFRESH_TOKEN=xxx
 GOOGLE_DRIVE_FOLDER_ID=null
 ```
+- Now, add backup_enable in config/backup.php outside of backup configuration
+``` bash
+    'backup_enable' => env('BACKUP_ENABLE', false),
+    'backup' = [
+      ...
+    ]
+```
 
 - With the following command the application can be backup:
 ``` bash
