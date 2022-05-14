@@ -34,7 +34,7 @@
   "minimum-stability": "stable",
   "prefer-stable": true,
   "require": {
-    "php": "^7.2|^8.0",
+    "php": "^7.4|^8.0",
     "spatie/laravel-backup": "*",
     "nao-pon/flysystem-google-drive": "~1.1"
   }
